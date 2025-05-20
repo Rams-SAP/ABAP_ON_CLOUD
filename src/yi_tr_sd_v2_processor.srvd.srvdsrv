@@ -1,0 +1,13 @@
+@EndUserText.label: 'Processor app service'
+define service YI_TR_SD_V2_Processor {
+  expose yi_tr_travel_processor       as Travel;
+  expose YI_TR_booking_PROCESSOR      as Booking;
+  expose YI_TR_ATTCHMENT_PROCESSOR    as Attachment;
+  expose YI_TR_BOOKINGSUPPL_PROCESSOR as BookingSuppl;
+  expose /DMO/I_Agency                as Agency;
+  expose /DMO/I_Customer              as Customer;
+  expose /DMO/I_Carrier               as Carrier;
+  expose /DMO/I_Connection            as Connection;
+  expose /DMO/I_Overall_Status_VH     as OverallStatus;
+  expose /DMO/I_Booking_Status_VH     as BookingStatus;
+}

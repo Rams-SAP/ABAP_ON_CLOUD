@@ -1,0 +1,32 @@
+unmanaged implementation in class zbp_i_tr_um_travel unique;
+strict ( 2 );
+
+define behavior for yi_tr_um_travel alias Travel
+//late numbering
+lock master
+authorization master ( instance )
+//etag master <field_name>
+{
+
+field(readonly:update) TravelId;
+field(mandatory) AgencyId, customerId, BeginDate, EndDate;
+  create;
+  update;
+  delete;
+ action(features:instance) set_book_status result[1] $self;
+ mapping for /dmo/travel control /dmo/s_travel_intx
+ {
+ AgencyId = agency_id;
+ BeginDate = begin_date;
+ EndDate = end_date;
+ CustomerId = customer_id;
+ CurrencyCode = currency_code;
+ BookingFee = booking_fee;
+ TotalPrice = total_price;
+ status = status;
+ Lastchangedat = lastchangedat;
+ Createdat = createdat;
+ TravelId = travel_id;
+ Memo = description;
+ }
+}

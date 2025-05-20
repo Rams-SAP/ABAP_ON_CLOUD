@@ -1,0 +1,34 @@
+@Metadata.layer: #CORE
+@UI.headerInfo:{ 
+typeName:'supplement',
+typeNamePlural: 'Suppliments',
+title : { value: 'BookingSupplementId' },
+description: { value: 'Price' }
+
+
+}
+annotate view YI_TR_BOOKINGSUPPL_PROCESSOR
+    with 
+{
+  @UI.facet: [{ purpose: #STANDARD, 
+                type: #IDENTIFICATION_REFERENCE,
+                label: 'Booking Supplements',
+                position: 10
+                 }                 
+                 ]
+   @UI.lineItem: [ { position: 10 } ]
+   @UI.identification: [{ position: 10 }]
+   BookingSupplementId;
+   @UI.lineItem: [ { position: 20 } ]
+   @UI.identification: [{ position: 20 }]
+   SupplementId;
+   @UI.lineItem: [ { position: 30 } ]
+   @UI.identification: [{ position: 30 }]
+   Price;
+   @UI.lineItem: [ { position: 40 } ]
+   @UI.identification: [{ position: 40 }]
+   CurrencyCode;
+//   LastChangedAt;
+
+    
+}

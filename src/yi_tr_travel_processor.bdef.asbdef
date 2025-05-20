@@ -1,0 +1,52 @@
+projection;
+strict ( 2 );
+
+use draft;
+define behavior for yi_tr_travel_processor alias Travel
+
+//create a new class for travel processor
+implementation in class zbp_tr_travel_proc unique
+{
+  use create(augment, precheck);
+  use update(precheck);
+  use delete;
+
+  use action Prepare;
+  use action edit;
+  use action discard;
+  use action resume;
+  use action activate;
+
+
+use action copyTravel;
+
+  use association _Booking { create; with draft;}
+  use association _Attachment { create; with draft;}
+}
+
+define behavior for YI_TR_booking_PROCESSOR alias Booking
+{
+  use update;
+  use delete;
+
+  use association _Travel {with draft;}
+  use association _BookSuppl { create; with draft; }
+}
+
+define behavior for YI_TR_BOOKINGSUPPL_PROCESSOR alias BookingSuppl
+{
+  use update;
+  use delete;
+
+  use association _Travel {with draft;}
+  use association _Booking {with draft;}
+}
+
+define behavior for YI_TR_ATTCHMENT_PROCESSOR alias Attachment
+{
+  use update;
+  use delete;
+
+  use association _Travel {with draft;}
+
+}

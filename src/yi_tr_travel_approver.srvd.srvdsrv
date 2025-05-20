@@ -1,0 +1,11 @@
+@EndUserText.label: 'Approver scenario for servive definition'
+define service YI_TR_TRAVEL_APPROVER {
+  expose YI_TR_TRAVEL_APPROVER    as Travel;
+  expose YI_TR_booking_approver   as Booking;
+  expose /DMO/I_Agency            as Agency;
+  expose /DMO/I_Customer          as Customer;
+  expose /DMO/I_Carrier           as Carrier;
+  expose /DMO/I_Connection        as Connection;
+  expose /DMO/I_Overall_Status_VH as OverallStatus;
+  expose /DMO/I_Booking_Status_VH as BookingStatus;
+}

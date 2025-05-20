@@ -1,0 +1,9 @@
+@EndUserText.label: 'Service Definition for travel unmanged Scenario'
+define service YI_TR_SD_UM_TRAVEL {
+  expose yi_tr_um_travel         as travel;
+  expose yi_tr_um_agency         as agency;
+  expose yi_tr_um_customer       as customer;
+  expose I_Country               as country;
+  expose I_Currency              as currency;
+  expose /DMO/I_Travel_Status_VH as status;
+}
